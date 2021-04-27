@@ -34,7 +34,7 @@ if (isset($_POST['Envoyer'])) {
     $calcul_tva = ($calcul/100)*20;
     echo "<h1>Merci pour votre commande !</h1>";
     echo "<p>Les frais de port sont à $port &euro;</p>";
-    echo "<p>Cher ".htmlspecialchars($_POST['prenom'])." ".htmlspecialchars($_POST['nom'])." vous restez nous devoir la somme de $calcul &euro;</p>";
+    echo "<p>Cher(e) ".htmlspecialchars($_POST['prenom'])." ".htmlspecialchars($_POST['nom'])." vous restez nous devoir la somme de $calcul &euro;</p>";
     echo "<p>N'oublions pas la TVA de 20% soit :".$calcul_tva."&euro;</p>";
     // var_dump($_POST);
 
