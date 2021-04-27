@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire </title>
+    <title>Formulaire PHP</title>
 </head>
 
 <body> 
@@ -15,7 +15,7 @@ if (isset($_POST['Envoyer'])) {
     // isset permet de savoir si ma variable est définie
     // On va déclarer notre Rayon et notre Total
     $rayon = (int)$_POST['rayon'];
-    $total = $_POST['total'];
+    $total = (int)$_POST['total'];
     
     // On définit le port dès le départ c'est pas trop mal ;)
     $port = 50;
@@ -34,7 +34,7 @@ if (isset($_POST['Envoyer'])) {
     $calcul_tva = ($calcul/100)*20;
     echo "<h1>Merci pour votre commande !</h1>";
     echo "<p>Les frais de port sont à $port &euro;</p>";
-    echo "<p>Cher ".$_POST['prenom']." ".$_POST['nom']." vous restez nous devoir la somme de $calcul &euro;</p>";
+    echo "<p>Cher ".htmlspecialchars($_POST['prenom'])." ".htmlspecialchars($_POST['nom'])." vous restez nous devoir la somme de $calcul &euro;</p>";
     echo "<p>N'oublions pas la TVA de 20% soit :".$calcul_tva."&euro;</p>";
     // var_dump($_POST);
 
